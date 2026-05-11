@@ -4,6 +4,7 @@ import DashboardView from '../views/DashboardView.vue'
 import LoginStaffView from '../views/LoginStaffView.vue'
 import ReservationsView from '../views/ReservationsView.vue'
 import PlanningView from '../views/PlanningView.vue'
+import CatalogView from '../views/CatalogView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -11,7 +12,8 @@ const router = createRouter({
     { path: '/', name: 'dashboard', component: DashboardView },
     { path: '/reservations', name: 'reservations', component: ReservationsView },
     { path: '/planning', name: 'planning', component: PlanningView },
-    { path: '/login', name: 'login', component: LoginStaffView }
+    { path: '/login', name: 'login', component: LoginStaffView },
+    { path: '/catalog', name: 'catalog', component: CatalogView },
   ]
 })
 
@@ -27,11 +29,11 @@ router.beforeEach(async (to, from, next) => {
   // Si la page visée n'est PAS le login ET que l'utilisateur n'est pas connecté ➔ Dehors !
   if (to.name !== 'login' && !authStore.isAuthenticated) {
     next({ name: 'login' })
-  } 
+  }
   // S'il va sur le login alors qu'il est déjà connecté ➔ On le renvoie à l'accueil !
   else if (to.name === 'login' && authStore.isAuthenticated) {
     next({ name: 'dashboard' })
-  } 
+  }
   // Sinon, c'est bon, on le laisse passer
   else {
     next()
