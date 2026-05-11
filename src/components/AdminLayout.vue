@@ -25,6 +25,11 @@
           active-class="bg-crmPrimary font-bold shadow-lg">
           <span class="mr-3">⚙️</span> Catalogue & Prix
         </router-link>
+
+        <router-link to="/agencies" class="flex items-center px-4 py-3 rounded-lg hover:bg-crmHover transition"
+          active-class="bg-crmPrimary font-bold shadow-lg">
+          <span class="mr-3">🏢</span> Infos de l'Agence
+        </router-link>
       </div>
     </aside>
 

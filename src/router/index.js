@@ -5,6 +5,7 @@ import LoginStaffView from '../views/LoginStaffView.vue'
 import ReservationsView from '../views/ReservationsView.vue'
 import PlanningView from '../views/PlanningView.vue'
 import CatalogView from '../views/CatalogView.vue'
+import AgenciesView from '../views/AgenciesView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,6 +15,7 @@ const router = createRouter({
     { path: '/planning', name: 'planning', component: PlanningView },
     { path: '/login', name: 'login', component: LoginStaffView },
     { path: '/catalog', name: 'catalog', component: CatalogView },
+    { path: '/agencies', name: 'agencies', component: AgenciesView },
   ]
 })
 
